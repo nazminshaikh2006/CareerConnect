@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerConnect - Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CareerConnect</h1>
+        <nav>
+            <a href="#jobs">Find Jobs</a>
+            <span id="welcome"></span>
+            <button id="logoutBtn" class="hidden">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Find Your Next Opportunity</h2>
+            <p>Connect with opportunities and build your career.</p>
+        </section>
+
+        <section class="auth-section" id="authSection">
+            <div class="auth-card">
+                <h2>Create Account</h2>
+
+                <form id="registerForm">
+                    <input name="name" placeholder="Full Name" required>
+                    <input name="email" type="email" placeholder="Email Address" required>
+                    <input name="password" type="password" placeholder="Password" required>
+
+                    <select name="role" required>
+                        <option value="jobseeker">Job Seeker</option>
+                        <option value="recruiter">Recruiter</option>
+                    </select>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+
+            <div class="auth-card">
+                <h2>Login</h2>
+
+                <form id="loginForm">
+                    <input name="email" type="email" placeholder="Email Address" required>
+                    <input name="password" type="password" placeholder="Password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <p id="message"></p>
+
+        <section>
+    <h2>Available Jobs</h2>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search jobs by title or company"
+    >
+
+    <input
+        type="text"
+        id="locationInput"
+        placeholder="Filter by location"
+    >
+
+    <button type="button" onclick="loadJobs()">Search Jobs</button>
+
+    <div id="jobsList"></div>
+</section>
+
+        <section id="myApplicationsSection" class="hidden">
+            <h2>My Applications</h2>
+            <div id="myApplicationsList"></div>
+        </section>
+
+        <section id="applySection" class="hidden">
+            <div class="form-card">
+                <h2>Apply for Job</h2>
+
+                <form id="applyForm">
+                    <label>Resume link or details</label>
+                    <textarea name="resume" placeholder="Enter your resume link or details"></textarea>
+
+                    <label>Cover Letter</label>
+                    <textarea name="coverLetter" placeholder="Write your cover letter"></textarea>
+
+                    <button type="submit">Submit Application</button>
+                    <button type="button" id="cancelApply" class="secondary">Cancel</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="recruiterSection" class="hidden">
+            <div class="form-card">
+                <h2>Post a Job</h2>
+
+                <form id="jobForm">
+                    <input name="title" placeholder="Job Title" required>
+                    <input name="company" placeholder="Company Name" required>
+                    <input name="location" placeholder="Location" required>
+                    <input name="salary" placeholder="Salary">
+                    <textarea name="description" placeholder="Job Description" required></textarea>
+
+                    <button type="submit">Post Job</button>
+                </form>
+            </div>
+
+            <div class="form-card">
+                <h2>Applications Received</h2>
+                <div id="applicationsList"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 CareerConnect | Job Application Platform</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
